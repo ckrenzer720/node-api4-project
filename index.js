@@ -10,6 +10,10 @@ const users = [
   { username: "gandlaf", password: "mellon" },
 ];
 
+server.use("/", (req, res) => {
+  res.send(`<h1>Welcome to the store!</h1>`);
+});
+
 server.get("/api/users", (req, res) => {
   res.status(200).json(users);
 });
